@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LIMEN — Senior Thesis Concept Artbook</title>
+<meta name="description" content="Limen: a sci-fi case-file concept artbook set in the world of Pharos. Character, creature and environment design plus splash art.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Special+Elite&family=Reenie+Beanie&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a111f; --ink2:#101a2d; --ink3:#16233b;
+  --paper:#e8e3d3; --muted:#8fa0ba;
+  --blue:#5ea4d6; --ember:#ff6a2b; --line:rgba(143,160,186,.22);
+  --display:'Chakra Petch',sans-serif; --type:'Special Elite',monospace; --hand:'Reenie Beanie',cursive; --body:'Sarabun','Chakra Petch',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--body);line-height:1.65;overflow-x:hidden;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(10,17,31,.2),var(--ink) 75%);pointer-events:none;z-index:0}
+main,header,footer{position:relative;z-index:1}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+.tag{font-family:var(--type);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1}
+h2{font-size:clamp(1.6rem,3.5vw,2.3rem);letter-spacing:.04em;margin:.4rem 0 1.2rem}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(10,17,31,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.nav .logo{font-family:var(--display);font-weight:700;letter-spacing:.35em;text-decoration:none}
+.nav ul{display:flex;gap:22px;list-style:none;font-family:var(--type);font-size:.85rem}
+.nav a:not(.logo){text-decoration:none;color:var(--muted);transition:color .2s}
+.nav a:not(.logo):hover,.nav a:focus-visible{color:var(--ember)}
+
+/* hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.stamp{display:inline-block;font-family:var(--type);color:var(--ember);border:2px solid var(--ember);padding:4px 12px;transform:rotate(-3deg);letter-spacing:.2em;font-size:.8rem;margin-bottom:22px;opacity:.9}
+.hero h1{font-size:clamp(3.4rem,11vw,7.5rem);letter-spacing:.18em;margin-left:-.05em}
+.hero h1 span{color:var(--ember)}
+.hero .sub{font-family:var(--type);color:var(--muted);margin:14px 0 8px;font-size:1.05rem}
+.hero .hand{font-family:var(--hand);font-size:2rem;color:var(--blue);transform:rotate(-1.5deg);margin:8px 0 28px;line-height:1.1}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font-family:var(--display);font-weight:600;letter-spacing:.08em;text-decoration:none;padding:12px 22px;border:1px solid var(--blue);color:var(--paper);background:transparent;cursor:pointer;font-size:.95rem;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn:hover,.btn:focus-visible{background:var(--blue);color:var(--ink)}
+.btn.primary{background:var(--ember);border-color:var(--ember);color:var(--ink)}
+.btn.primary:hover,.btn.primary:focus-visible{background:#ff8550;border-color:#ff8550}
+.btn[disabled]{opacity:.35;cursor:default;pointer-events:none}
+
+.frame{position:relative;justify-self:center;width:min(360px,80%);aspect-ratio:7/10;background:#f1ecdd;padding:12px 12px 44px;box-shadow:0 30px 60px rgba(0,0,0,.55);transform:rotate(3deg);transition:transform .4s}
+.frame:hover{transform:rotate(0) scale(1.02)}
+.frame .art{position:relative;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 50% 46%,#ff9a52 0,#e24a1c 14%,#6a1f2a 24%,#0f2a4d 40%,#081326 75%)}
+.frame .art::after{content:"";position:absolute;left:50%;top:46%;width:46%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;box-shadow:0 0 0 3px rgba(255,255,255,.25),0 0 60px 10px rgba(255,120,60,.55)}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.frame figcaption{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-family:var(--hand);font-size:1.7rem;color:#2a2a2a}
+.frame .tape{position:absolute;top:-14px;left:50%;width:90px;height:28px;background:rgba(232,227,211,.55);transform:translateX(-50%) rotate(-4deg);z-index:3}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+.preface .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.preface p{margin-bottom:1em;color:#cfd6e2}
+.note{font-family:var(--hand);font-size:1.7rem;color:var(--ember);transform:rotate(-1deg);line-height:1.1}
+.facts{list-style:none;font-family:var(--type);font-size:.92rem;border:1px solid var(--line);background:var(--ink2)}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:12px 16px;border-bottom:1px dashed var(--line)}
+.facts li:last-child{border:0}
+.facts span:first-child{color:var(--muted)}
+
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--ink2);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--ember)}
+.card .n{font-family:var(--type);color:var(--ember);font-size:.8rem;letter-spacing:.2em}
+.card h3{font-size:1.25rem;letter-spacing:.05em}
+.card p{font-size:.92rem;color:var(--muted);flex:1}
+.card button{align-self:flex-start;font-family:var(--type);background:none;border:0;border-bottom:1px solid var(--blue);color:var(--blue);cursor:pointer;padding:2px 0;font-size:.85rem}
+.card button:hover{color:var(--ember);border-color:var(--ember)}
+
+/* flipbook */
+.viewer{background:linear-gradient(180deg,var(--ink2),var(--ink));border:1px solid var(--line);padding:28px 16px 18px;position:relative}
+.viewer:fullscreen{display:flex;flex-direction:column;justify-content:center;background:var(--ink);padding:16px}
+.stage{width:min(100%,1060px);aspect-ratio:1.4/1;margin:0 auto;position:relative}
+.viewer:fullscreen .stage{width:min(100%,calc((100vh - 110px) * 1.4));}
+#book{filter:drop-shadow(0 24px 40px rgba(0,0,0,.6))}
+.page{background:#f1ecdd;overflow:hidden;position:relative}
+.page img{width:100%;height:100%;object-fit:cover;display:block}
+.page.ph{display:flex;flex-direction:column;padding:9% 10%;color:#27303f;font-family:var(--type)}
+.page.ph.hard{background:linear-gradient(160deg,#16294a,#0a111f);color:var(--paper)}
+.page.ph .pn{font-size:.75rem;letter-spacing:.2em;color:#8a8f99}
+.page.ph.hard .pn{color:var(--blue)}
+.page.ph h4{font-family:var(--display);font-size:1.5rem;margin:14px 0 8px}
+.page.ph .bar{height:8px;background:rgba(39,48,63,.15);margin:8px 0;border-radius:2px}
+.page.ph.hard .bar{background:rgba(255,255,255,.12)}
+.page.ph .bar.s{width:60%}
+.page.ph .msg{margin-top:auto;font-family:var(--hand);font-size:1.5rem;color:var(--ember);line-height:1.05}
+.controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:20px;flex-wrap:wrap}
+.ibtn{width:44px;height:44px;background:transparent;border:1px solid var(--blue);color:var(--paper);cursor:pointer;font-size:1.1rem;transition:all .2s}
+.ibtn:hover,.ibtn:focus-visible{background:var(--blue);color:var(--ink)}
+.counter{font-family:var(--type);min-width:150px;text-align:center;color:var(--muted)}
+.hint{text-align:center;font-family:var(--type);font-size:.78rem;color:var(--muted);margin-top:12px}
+.chapters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.chip{font-family:var(--type);font-size:.8rem;background:none;border:1px solid var(--line);color:var(--muted);padding:6px 14px;cursor:pointer}
+.chip:hover{border-color:var(--ember);color:var(--ember)}
+
+footer{padding:56px 0 64px;border-top:1px solid var(--line);text-align:center}
+footer .hand{font-family:var(--hand);font-size:2rem;color:var(--blue)}
+footer p{color:var(--muted);font-size:.9rem}
+
+@media(max-width:900px){
+  .hero .wrap,.preface .cols{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .nav ul{display:none}
+  .hero{padding-top:48px}
+}
+@media(max-width:700px){
+  .stage{aspect-ratio:.7/1;width:min(100%,420px)}
+  .cards{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">LIMEN</a>
+    <ul>
+      <li><a href="#preface">Preface</a></li>
+      <li><a href="#contents">Contents</a></li>
+      <li><a href="#flipbook">Read the book</a></li>
+      <li><a href="#credits">Credits</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="stamp">CASE FILE · LIMEN</div>
+        <h1>LIM<span>E</span>N</h1>
+        <p class="sub">Senior Thesis Concept Artbook · Pharos</p>
+        <p class="hand">a threshold, and what waits beyond it</p>
+        <div class="btns">
+          <a class="btn primary" href="#flipbook">Open the book →</a>
+          <a class="btn" id="pdfBtn" href="#" download>Download PDF</a>
+        </div>
+      </div>
+      <figure class="frame">
+        <span class="tape"></span>
+        <div class="art"><img id="coverImg" src="pages/page-01.jpg" alt="Limen artbook cover" onerror="this.remove()"></div>
+        <figcaption>Exhibit A — the cover</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- PREFACE -->
+  <section id="preface" class="preface">
+    <div class="wrap">
+      <span class="tag">// File 01</span>
+      <h2>Preface</h2>
+      <div class="cols">
+        <div>
+          <!-- EDIT: replace this with your real preface -->
+          <p>Replace this paragraph with the opening of your preface. Introduce Pharos, what "Limen" (threshold) means to you, and what the reader is about to see.</p>
+          <p>Keep it short: two or three paragraphs works best on a website. The full version stays in the book itself.</p>
+          <p class="note">↑ placeholder — write your own!</p>
+        </div>
+        <ul class="facts">
+          <li><span>Title</span><span>Limen</span></li>
+          <li><span>Type</span><span>Concept artbook</span></li>
+          <li><span>Setting</span><span>Pharos</span></li>
+          <li><span>Format</span><span>7 × 10 in · portrait</span></li>
+          <li><span>Pages</span><span id="factPages">—</span></li>
+          <li><span>Contents</span><span>Characters · Creatures · Environments · Splash art</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENTS -->
+  <section id="contents">
+    <div class="wrap">
+      <span class="tag">// File 02</span>
+      <h2>Contents</h2>
+      <div class="cards" id="cards"></div>
+    </div>
+  </section>
+
+  <!-- FLIPBOOK -->
+  <section id="flipbook">
+    <div class="wrap">
+      <span class="tag">// File 03</span>
+      <h2>Read the Book</h2>
+      <div class="viewer" id="viewer">
+        <div class="stage"><div id="book"></div></div>
+        <div class="controls">
+          <button class="ibtn" id="prev" aria-label="Previous page">←</button>
+          <span class="counter" id="counter" aria-live="polite">Cover</span>
+          <button class="ibtn" id="next" aria-label="Next page">→</button>
+          <button class="ibtn" id="fs" aria-label="Toggle fullscreen" title="Fullscreen">⛶</button>
+        </div>
+        <div class="chapters" id="chapters"></div>
+        <p class="hint">Drag a page corner, click the edges, or use ← → on your keyboard.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="credits">
+  <div class="wrap">
+    <p class="hand">filed by</p>
+    <!-- EDIT: your name / school -->
+    <h3 style="font-family:var(--display);letter-spacing:.1em;margin:6px 0">ธนทัต เพิ่มผล</h3>
+    <p>Mae Fah Luang University · School of Applied Digital Technology<br>Multimedia Technology and Animation</p>
+    <p style="margin-top:14px;font-size:.8rem">© <span id="yr"></span> All artwork and characters in Limen are original works. Please do not reuse without permission.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<script>
+/* ============ EDIT THIS BLOCK ============ */
+const CONFIG = {
+  totalPages: 50,                 // total pages INCLUDING front and back cover (keep it an even number)
+  imagePath: 'pages/page-',       // files: pages/page-01.jpg, page-02.jpg, ...
+  imageExt: '.jpg',
+  pdf: '',                        // e.g. 'Limen-preview.pdf' (put the file next to index.html). Leave '' to disable the button.
+  sections: [                     // "page" = the page number where each section starts
+    { n:'01', title:'Characters',   page:6,  text:'The cast of Pharos: designs, turnarounds and expression sheets.' },
+    { n:'02', title:'Creatures',    page:20, text:'Monsters and abyssal creatures, documented like field specimens.' },
+    { n:'03', title:'Environments', page:34, text:'Locations across Pharos, including full two-page spreads.' },
+    { n:'04', title:'Splash Art',   page:46, text:'Final illustrations that bring the world together.' }
+  ]
+};
+/* ========================================= */
+
+const pad = n => String(n).padStart(2,'0');
+const $ = s => document.querySelector(s);
+$('#yr').textContent = new Date().getFullYear();
+$('#factPages').textContent = CONFIG.totalPages;
+
+/* PDF button */
+const pdfBtn = $('#pdfBtn');
+if (CONFIG.pdf) pdfBtn.href = CONFIG.pdf; else pdfBtn.setAttribute('disabled','');
+
+/* Build pages */
+const book = $('#book');
+for (let i = 1; i <= CONFIG.totalPages; i++) {
+  const hard = (i === 1 || i === CONFIG.totalPages);
+  const el = document.createElement('div');
+  el.className = 'page';
+  if (hard) el.setAttribute('data-density','hard');
+  const img = new Image();
+  img.alt = `Limen artbook, page ${i}`;
+  img.decoding = 'async';
+  img.src = CONFIG.imagePath + pad(i) + CONFIG.imageExt;
+  img.onerror = () => {   // placeholder until the real image exists
+    img.remove();
+    el.classList.add('ph'); if (hard) el.classList.add('hard');
+    el.innerHTML = `<div class="pn">PAGE ${pad(i)}</div>
+      <h4>${i===1?'LIMEN':i===CONFIG.totalPages?'END OF FILE':'CASE FILE'}</h4>
+      <div class="bar"></div><div class="bar"></div><div class="bar s"></div>
+      <div class="msg">add ${CONFIG.imagePath.split('/').pop()}${pad(i)}${CONFIG.imageExt}<br>to the pages folder</div>`;
+  };
+  el.appendChild(img);
+  book.appendChild(el);
+}
+
+/* Flipbook */
+const flip = new St.PageFlip(book, {
+  width:700, height:1000, size:'stretch',
+  minWidth:260, maxWidth:700, minHeight:370, maxHeight:1000,
+  showCover:true, usePortrait:true, drawShadow:true, maxShadowOpacity:.5,
+  flippingTime:800, mobileScrollSupport:false
+});
+flip.loadFromHTML(document.querySelectorAll('.page'));
+
+function updateCounter(){
+  const idx = flip.getCurrentPageIndex(), total = CONFIG.totalPages;
+  const landscape = flip.getOrientation() === 'landscape';
+  let t;
+  if (idx === 0) t = 'Cover';
+  else if (idx >= total - 1) t = 'Back cover';
+  else if (landscape) t = `Pages ${idx+1}–${Math.min(idx+2,total)} / ${total}`;
+  else t = `Page ${idx+1} / ${total}`;
+  $('#counter').textContent = t;
+}
+flip.on('flip', updateCounter);
+flip.on('changeOrientation', updateCounter);
+updateCounter();
+
+$('#prev').onclick = () => flip.flipPrev();
+$('#next').onclick = () => flip.flipNext();
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft') flip.flipPrev();
+  if (e.key === 'ArrowRight') flip.flipNext();
+});
+$('#fs').onclick = () => {
+  const v = $('#viewer');
+  document.fullscreenElement ? document.exitFullscreen() : v.requestFullscreen && v.requestFullscreen();
+};
+document.addEventListener('fullscreenchange', () => setTimeout(() => flip.update && flip.update(), 150));
+
+/* Jump to a page (1-based), scroll to book */
+function goTo(page){
+  document.getElementById('flipbook').scrollIntoView({behavior:'smooth'});
+  setTimeout(() => flip.flip(Math.max(0, Math.min(page-1, CONFIG.totalPages-1))), 450);
+}
+
+/* Section cards + chapter chips */
+const cards = $('#cards'), chips = $('#chapters');
+const first = document.createElement('button'); first.className='chip'; first.textContent='Cover'; first.onclick=()=>flip.flip(0); chips.appendChild(first);
+CONFIG.sections.forEach(s => {
+  const c = document.createElement('article'); c.className='card';
+  c.innerHTML = `<span class="n">${s.n}</span><h3>${s.title}</h3><p>${s.text}</p><button>Open at page ${s.page} →</button>`;
+  c.querySelector('button').onclick = () => goTo(s.page);
+  cards.appendChild(c);
+  const ch = document.createElement('button'); ch.className='chip'; ch.textContent=`${s.title} · p.${s.page}`;
+  ch.onclick = () => flip.flip(s.page-1);
+  chips.appendChild(ch);
+});
+</script>
+</body>
+</html>
